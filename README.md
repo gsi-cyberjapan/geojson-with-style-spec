@@ -14,7 +14,7 @@ geojson-with-style-spec
 {"type": "FeatureCollection", "features": [
 {
   "type": "Feature",
-  "geometry": {"type": "Point": [135, 35]},
+  "geometry": {"type": "Point", "coordinates": [135, 35]},
   "properties": {
     "名称": "○○公園",
     "住所": "○○県○○市○○",
