@@ -47,7 +47,7 @@ http://gsi-cyberjapan.github.io/geojson-with-style-spec/sample2.html
 
 ## 今後の課題
 - 「KMLウェブ地図プロファイル」からの上位互換性の確保。
-- 2015年7月15日現在、地理院地図（http://maps.gsi.go.jp/）では"_markerType": "CircleMarker"のファイルの読み込みに非対応。読み込んだ際、"_markerType": "Circle"として処理している。
+- 2015年7月15日現在、地理院地図（http://maps.gsi.go.jp/ ）では"_markerType": "CircleMarker"のファイルの読み込みに非対応。読み込んだ際、"_markerType": "Circle"として処理している。
 
 ## 参考文献
 1. Leaflet リファレンス http://leafletjs.com/reference.html （特にIcon, DivIcon, Circle, CircleMarker 及び Path）
