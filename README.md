@@ -7,7 +7,7 @@ geojson-with-style-spec
 
 ## 規約
 1. properties に、Leaflet の path オプションその他のスタイル属性を埋め込む。但し、スタイル用のオプションであることを明示するために、オプション名の前にはアンダーバー(_)を加える。
-2. スタイル属性は、Leaflet の Icon, DivIcon, CircleMarker に用いられているものを用いる。また、これらのうちどのマーカー種類を使うか明示するため、_markerType にクラス名（Icon, DivIcon 又は CircleMarker）を記載する。
+2. スタイル属性は、Leaflet の Icon, DivIcon, Circle, CircleMarker に用いられているものを用いる。また、これらのうちどのマーカー種類を使うか明示するため、_markerType にクラス名（Icon, DivIcon, Circle 又は CircleMarker）を記載する。
 
 ## サンプル
 ```json
@@ -18,6 +18,7 @@ geojson-with-style-spec
   "properties": {
     "名称": "○○公園",
     "住所": "○○県○○市○○",
+    "_markerType": "Icon", 
     "_iconUrl": "http://cyberjapan.jp/symbols/010.png", 
     "_iconSize": [20, 20],
     "_iconAnchor": [10, 10],
@@ -31,15 +32,23 @@ geojson-with-style-spec
 
 |属性名|属性値|デフォルト|
 |:----|:----|:--|
-|_markerType|Icon/DivIcon/CircleMarker|Icon|
+|_markerType|Icon/DivIcon/Circle/CircleMarker|Icon|
 |_className, _stroke, _color, _weight, _opacity, _fill, _fillColor, _fillOpacity, _dashArray, _lineCap, _lineJoin, _clickable|L.Pathの仕様による|L.Pathの仕様による|
 |_iconUrl, _iconSize, _iconAnchor|L.Iconの仕様による|L.Iconの仕様による|
 |_html,|L.DivIconの仕様による|L.DivIconの仕様による|
-|_radius,|L.CircleMarkerの仕様による|L.CircleMarkerの仕様による|
+|_radius,|L.Circle, L.CircleMarkerの仕様による|L.Circle, L.CircleMarkerの仕様による|
+
+## サンプルサイト
+スタイルつき GeoJSONをLaefletで表示するサンプルです。
+- 外部ファイルを表示
+http://gsi-cyberjapan.github.io/geojson-with-style-spec/sample1.html
+- htmlに埋め込み
+http://gsi-cyberjapan.github.io/geojson-with-style-spec/sample2.html
 
 ## 今後の課題
 - 「KMLウェブ地図プロファイル」からの上位互換性の確保。
+- 2015年7月15日現在、地理院地図（http://maps.gsi.go.jp/）では"_markerType": "CircleMarker"のファイルの読み込みに非対応。読み込んだ際、"_markerType": "Circle"として処理している。
 
 ## 参考文献
-1. Leaflet リファレンス http://leafletjs.com/reference.html （特にIcon, DivIcon、CircleMarker 及び Path）
+1. Leaflet リファレンス http://leafletjs.com/reference.html （特にIcon, DivIcon, Circle, CircleMarker 及び Path）
 

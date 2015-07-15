@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>スタイルつき GeoJSON 表示サンプル</title>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<style>
+body {padding: 0; margin: 0}
+html, body, #mapdiv {height: 100%; width: 100%;}
+.leaflet-container {background: #fff;}
+.leaflet-div-icon {background: none;white-space: nowrap;border:none;}
+</style>
+</head>
+<body>
+<div id="mapdiv">
+<script>
+
+function geojson_style(prop) {
+  var s = {};
+  for(name in prop) {
+   if(name.match(/^_/) && !name.match(/_markerType/)){
+    if( prop['_markerType']=='Circle' && name =='_radius'){continue;}
+    s[name.substr(1)]=prop[name];
+   }
+  }
+  return s;
+}
+
+function popup_properties(prop) {
+  var s = ''
+  for(name in prop) {
+   if(!name.match(/^_/)){
+    s += name + "：" + prop[name] + "<br>";
+   }
+  }
+  return s;
+}
+
+//スタイルつき GeoJSON読み込み
+var xhr = new XMLHttpRequest();
+xhr.open('GET', './sample1.geojson', false);
+xhr.send(null);
+var sampledata = JSON.parse(xhr.responseText);
+
+var sampleLayer = L.geoJson(sampledata, {
+   pointToLayer: function (feature, latlng) {
+    var s = geojson_style(feature.properties);
+    if(feature.properties['_markerType']=='Icon'){
+         var myIcon = L.icon(s);
+         return L.marker(latlng, {icon: myIcon});
+    }
+    if(feature.properties['_markerType']=='DivIcon'){
+         var myIcon = L.divIcon(s);
+         return L.marker(latlng, {icon: myIcon});
+    }
+    if(feature.properties['_markerType']=='Circle'){
+        return L.circle(latlng,feature.properties['_radius'],s);
+    }
+    if(feature.properties['_markerType']=='CircleMarker'){
+        return L.circleMarker(latlng,s);
+    }
+   },
+   style: function (feature) {
+     if(!feature.properties['_markerType']){
+        var s = geojson_style(feature.properties);
+        return s;
+     }
+   },
+   onEachFeature: function (feature, layer) {
+    layer.bindPopup(popup_properties(feature.properties));
+   }
+});
+
+//背景地図設定
+var std = L.tileLayer(
+'http://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
+{attribution: "<a href='http://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル（標準地図）</a>", 
+maxNativeZoom: 18, maxZoom: 18, opacity:1});
+
+var map = L.map('mapdiv', {
+center: [36.104700,140.087013], zoom: 16, layers: [std,sampleLayer]});
+
+L.control.scale({imperial: false}).addTo(map);
+var baseLayers = {"地理院タイル（標準地図）": std};
+var overlays = {'サンプル': sampleLayer };
+L.control.layers(baseLayers, overlays,{position:'topright',collapsed:false}).addTo(map);
+
+
+</script>
+</body>
+</html>
