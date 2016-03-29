@@ -4,32 +4,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "サンプルアイコン1",
-        "サンプル": "アイコン1",
-        "_markerType": "Icon",
-        "_iconUrl": "http://cyberjapandata.gsi.go.jp/portal/sys/v4/symbols/080.png",
-        "_iconSize": [
-          20,
-          20
-        ],
-        "_iconAnchor": [
-          10,
-          10
-        ]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.08612275123596,
-          36.10531502504233
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "サンプルアイコン2",
-        "サンプル": "アイコン2",
+        "name": "マーカー（アイコン） その1",
+        "geometryのtype": "Point",
+        "propertiesの_markertype": "Icon",
         "_markerType": "Icon",
         "_iconUrl": "http://cyberjapandata.gsi.go.jp/portal/sys/v4/symbols/081.png",
         "_iconSize": [
@@ -44,65 +21,123 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.08683621883392,
-          36.10496396197309
+          140.0814127922058,
+          36.09984519755111
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "サンプルライン1",
-        "サンプル": "ライン1",
-        "_color": "#ff0000",
-        "_opacity": 0.5,
-        "_weight": 3
+        "name": "マーカー（アイコン） その2",
+        "geometryのtype": "Point",
+        "propertiesの_markertype": "Icon",
+        "_markerType": "Icon",
+        "_iconUrl": "http://cyberjapandata.gsi.go.jp/portal/sys/v4/symbols/081.png",
+        "_iconSize": [
+          20,
+          20
+        ],
+        "_iconAnchor": [
+          10,
+          10
+        ]
       },
       "geometry": {
-        "type": "LineString",
+        "type": "Point",
         "coordinates": [
-          [
-            140.08261442184445,
-            36.107178666916624
-          ],
-          [
-            140.08456707000732,
-            36.103954105137895
-          ],
-          [
-            140.0870132446289,
-            36.10280987398104
-          ],
-          [
-            140.08703470230103,
-            36.10237644873644
-          ]
+          140.08042573928833,
+          36.10003591109742
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "サンプルライン2",
-        "サンプル": "ライン2",
-        "_color": "#0000ff",
-        "_opacity": 0.71,
+        "name": "マーカー（円） その1",
+        "geometryのtype": "Icon",
+        "propertiesの_markertype": "CircleMarker",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#9900ff",
+        "_fillOpacity": 0.5,
+        "_radius": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.07870912551877,
+          36.10029597427826
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "マーカー（円） その2",
+        "geometryのtype": "Icon",
+        "propertiesの_markertype": "CircleMarker",
+        "_markerType": "CircleMarker",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3,
+        "_fillColor": "#9900ff",
+        "_fillOpacity": 0.5,
+        "_radius": 20
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          140.0771427154541,
+          36.10071207357713
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "線 その1",
+        "geometryのtype": "LineString",
+        "_color": "#ff00ff",
+        "_opacity": 0.5,
         "_weight": 5
       },
       "geometry": {
         "type": "LineString",
         "coordinates": [
           [
-            140.08817195892334,
-            36.105774438540784
+            140.07656335830688,
+            36.09972383414425
           ],
           [
-            140.08583307266235,
-            36.10306992798007
+            140.07913827896118,
+            36.09922104089022
           ],
           [
-            140.089373588562,
-            36.10352068620589
+            140.07988929748535,
+            36.10137089296031
+          ],
+          [
+            140.0844168663025,
+            36.10105882130955
+          ],
+          [
+            140.08684158325195,
+            36.103000580331155
+          ],
+          [
+            140.0914978981018,
+            36.10289655874302
+          ],
+          [
+            140.09100437164307,
+            36.10554906621689
+          ],
+          [
+            140.0870132446289,
+            36.10716133091688
           ]
         ]
       }
@@ -110,12 +145,63 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "サンプルポリゴン1",
-        "サンプル": "ポリゴン1",
+        "name": "線 その2",
+        "geometryのtype": "LineString",
+        "_color": "#0000ff",
+        "_opacity": 0.75,
+        "_weight": 5
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            140.0760054588318,
+            36.09847551393631
+          ],
+          [
+            140.08046865463257,
+            36.09812875480343
+          ],
+          [
+            140.0835156440735,
+            36.09738321748593
+          ],
+          [
+            140.08619785308838,
+            36.09700177705334
+          ],
+          [
+            140.08613348007202,
+            36.0987009065521
+          ],
+          [
+            140.0863265991211,
+            36.09889162287585
+          ],
+          [
+            140.0844168663025,
+            36.09977584705585
+          ],
+          [
+            140.0864553451538,
+            36.10029597427826
+          ],
+          [
+            140.08907318115234,
+            36.10253248209996
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "ポリゴン その1",
+        "geometryのtype": "Polygon",
         "_color": "#000000",
-        "_opacity": 0.5,
+        "_opacity": 0.6,
         "_weight": 3,
-        "_fillColor": "#ff0000",
+        "_fillColor": "#00ff00",
         "_fillOpacity": 0.5
       },
       "geometry": {
@@ -123,24 +209,24 @@
         "coordinates": [
           [
             [
-              140.08302211761475,
-              36.10438752167874
+              140.08535027503967,
+              36.10580044299809
             ],
             [
-              140.08130550384521,
-              36.102463133976656
+              140.08815050125122,
+              36.105809111148616
             ],
             [
-              140.08551120758057,
-              36.1007294110001
+              140.08893907070157,
+              36.10358136500031
             ],
             [
-              140.08536100387573,
-              36.10254981912122
+              140.08613884449005,
+              36.10359003339569
             ],
             [
-              140.08302211761475,
-              36.10438752167874
+              140.08535027503967,
+              36.10580044299809
             ]
           ]
         ]
@@ -149,33 +235,37 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "サンプルポリゴン2",
-        "サンプル": "ポリゴン2",
-        "_color": "#00ff00",
-        "_opacity": 0.8,
+        "name": "ポリゴン その2",
+        "geometryのtype": "Polygon",
+        "_color": "#000000",
+        "_opacity": 0.6,
         "_weight": 3,
-        "_fillColor": "#ffff00",
-        "_fillOpacity": 0.8
+        "_fillColor": "#00ff00",
+        "_fillOpacity": 0.5
       },
       "geometry": {
         "type": "Polygon",
         "coordinates": [
           [
             [
-              140.08748531341553,
-              36.102601830162044
+              140.0810346007347,
+              36.10577011193364
             ],
             [
-              140.0864553451538,
-              36.10152692832089
+              140.08383482694626,
+              36.105778780084165
             ],
             [
-              140.09006023406982,
-              36.10183899811237
+              140.0846233963966,
+              36.10355103393586
             ],
             [
-              140.08748531341553,
-              36.102601830162044
+              140.0818231701851,
+              36.10355970233124
+            ],
+            [
+              140.0810346007347,
+              36.10577011193364
             ]
           ]
         ]
@@ -184,116 +274,78 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "サンプルサークル1",
-        "サンプル": "サークル1",
+        "name": "円 その1",
+        "geometryのtype": "Point",
+        "propertiesの_markertype": "Circle",
         "_markerType": "Circle",
         "_color": "#000000",
         "_opacity": 0.5,
         "_weight": 3,
         "_fillColor": "#ff0000",
         "_fillOpacity": 0.5,
-        "_radius": 80
+        "_radius": 100
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.08682012557983,
-          36.10554906621689
+          140.07606983184814,
+          36.10645055163299
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "サンプルサークル2",
-        "サンプル": "サークル2",
+        "name": "円 その2",
+        "geometryのtype": "Point",
+        "propertiesの_markertype": "Circle",
         "_markerType": "Circle",
-        "_color": "#0000ff",
-        "_opacity": 0.81,
-        "_weight": 3,
-        "_fillColor": "#00ffff",
-        "_fillOpacity": 0.81,
-        "_radius": 160
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.08877277374268,
-          36.103988778549166
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "サンプルサークルマーカー1",
-        "サンプル": "サークルマーカー1",
-        "_markerType": "CircleMarker",
         "_color": "#000000",
         "_opacity": 0.5,
         "_weight": 3,
         "_fillColor": "#ff0000",
         "_fillOpacity": 0.5,
-        "_radius": 20
+        "_radius": 100
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.0909,
-          36.10555
+          140.0779151916504,
+          36.10457822419921
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "サンプルサークルマーカー2",
-        "サンプル": "サークルマーカー2",
-        "_markerType": "CircleMarker",
-        "_color": "#0000ff",
-        "_opacity": 0.81,
-        "_weight": 3,
-        "_fillColor": "#00ffff",
-        "_fillOpacity": 0.81,
-        "_radius": 40
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          140.09077,
-          36.103980
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "name": "サンプルdiv1",
-        "サンプル": "div1",
+        "name": "テキスト その1",
+        "geometryのtype": "Point",
+        "propertiesの_markertype": "DivIcon",
         "_markerType": "DivIcon",
-        "_html": "サンプルdiv1"
+        "_html": "<span style=\"color: #0000ff; font-weight: bold;\">これはテキストのサンプルです。</span>"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.08079051971436,
-          36.104907618371435
+          140.07868766784668,
+          36.102047043951366
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "name": "サンプルdiv2",
-        "サンプル": "div2",
+        "name": "テキスト その2",
+        "geometryのtype": "Point",
+        "propertiesの_markertype": "DivIcon",
         "_markerType": "DivIcon",
-        "_html": "サンプルdiv2"
+        "_html": "<span style=\"color: #0000ff; font-weight: bold;\">これはテキストのサンプルです。</span>"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          140.08606910705566,
-          36.10280987398104
+          140.0792670249939,
+          36.10256715613866
         ]
       }
     }
