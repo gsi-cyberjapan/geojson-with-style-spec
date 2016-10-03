@@ -3,7 +3,7 @@ geojson-with-style-spec
 # スタイルつき GeoJSON 規約
 ※この規約は検討中のものであり、今後変更する可能性がある。
 ## 適用範囲
-この文書は、スタイル属性を GeoJSON ファイルの内部に埋め込む方法を定義する。スタイル属性を埋め込んだ GeoJSON ファイル（以下「スタイルつき GeoJSON」という）は、今後「KMLウェブ地図プロファイル」（http://portal.cyberjapan.jp/help/howtouse/30Jul2013_kmp.pdf ）を置き換えていくことを想定している。
+この文書は、スタイル属性を GeoJSON ファイルの内部に埋め込む方法を定義する。スタイル属性を埋め込んだ GeoJSON ファイル（以下「スタイルつき GeoJSON」という）は、今後[「KMLウェブ地図プロファイル」](http://maps.gsi.go.jp/help/pdf/16Jun2015_kmp.pdf)を置き換えていくことを想定している。
 
 ## 規約
 1. properties に、Leaflet の path オプションその他のスタイル属性を埋め込む。但し、スタイル用のオプションであることを明示するために、オプション名の前にはアンダーバー(_)を加える。
