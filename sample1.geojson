@@ -55,7 +55,7 @@
       "type": "Feature",
       "properties": {
         "name": "マーカー（円） その1",
-        "geometryのtype": "Icon",
+        "geometryのtype": "Point",
         "propertiesの_markertype": "CircleMarker",
         "_markerType": "CircleMarker",
         "_color": "#000000",
@@ -77,7 +77,7 @@
       "type": "Feature",
       "properties": {
         "name": "マーカー（円） その2",
-        "geometryのtype": "Icon",
+        "geometryのtype": "Point",
         "propertiesの_markertype": "CircleMarker",
         "_markerType": "CircleMarker",
         "_color": "#000000",
