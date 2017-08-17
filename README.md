@@ -3,7 +3,7 @@ geojson-with-style-spec
 # スタイルつき GeoJSON 規約
 ※この規約は検討中のものであり、今後変更する可能性がある。
 ## 適用範囲
-この文書は、スタイル属性を GeoJSON ファイルの内部に埋め込む方法を定義する。スタイル属性を埋め込んだ GeoJSON ファイル（以下「スタイルつき GeoJSON」という）は、今後「[KMLウェブ地図プロファイル](http://maps.gsi.go.jp/help/pdf/16Jun2015_kmp.pdf)」（PDF）を置き換えていくことを想定している。
+この文書は、スタイル属性を GeoJSON ファイルの内部に埋め込む方法を定義する。スタイル属性を埋め込んだ GeoJSON ファイル（以下「スタイルつき GeoJSON」という）は、今後「[KMLウェブ地図プロファイル](https://maps.gsi.go.jp/help/pdf/16Jun2015_kmp.pdf)」（PDF）を置き換えていくことを想定している。
 
 ## 規約
 1. properties に、Leaflet の path オプションその他のスタイル属性を埋め込む。但し、スタイル用のオプションであることを明示するために、オプション名の前にはアンダーバー(_)を加える。
@@ -19,7 +19,7 @@ geojson-with-style-spec
     "名称": "○○公園",
     "住所": "○○県○○市○○",
     "_markerType": "Icon", 
-    "_iconUrl": "http://cyberjapan.jp/symbols/010.png", 
+    "_iconUrl": "https://cyberjapandata.gsi.go.jp/portal/sys/v4/symbols/010.png", 
     "_iconSize": [20, 20],
     "_iconAnchor": [10, 10],
     "_className": "park"
@@ -41,13 +41,13 @@ geojson-with-style-spec
 ## サンプルサイト
 スタイルつき GeoJSONをLaefletで表示するサンプルです。
 - 外部ファイルを表示
-http://gsi-cyberjapan.github.io/geojson-with-style-spec/sample1.html
+https://gsi-cyberjapan.github.io/geojson-with-style-spec/sample1.html
 - htmlに埋め込み
-http://gsi-cyberjapan.github.io/geojson-with-style-spec/sample2.html
+https://gsi-cyberjapan.github.io/geojson-with-style-spec/sample2.html
 
 ## 今後の課題
 - 「KMLウェブ地図プロファイル」からの上位互換性の確保。
-- ~~2015年7月15日現在、地理院地図（http://maps.gsi.go.jp/ ）では"_markerType": "CircleMarker"のファイルの読み込みに非対応。読み込んだ際、"_markerType": "Circle"として処理している。~~ 2016年3月14日、地理院地図（http://maps.gsi.go.jp/ ）は"_markerType": "CircleMarker"のファイルの読み込みに対応した。
+- ~~2015年7月15日現在、地理院地図（https://maps.gsi.go.jp/ ）では"_markerType": "CircleMarker"のファイルの読み込みに非対応。読み込んだ際、"_markerType": "Circle"として処理している。~~ 2016年3月14日、地理院地図（https://maps.gsi.go.jp/ ）は"_markerType": "CircleMarker"のファイルの読み込みに対応した。
 
 ## 参考文献
-1. Leaflet リファレンス http://leafletjs.com/reference.html （特にIcon, DivIcon, Circle, CircleMarker 及び Path）
+1. Leaflet リファレンス http://leafletjs.com/reference-0.7.7.html （特にIcon, DivIcon, Circle, CircleMarker 及び Path）
