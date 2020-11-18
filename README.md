@@ -39,7 +39,7 @@ geojson-with-style-spec
 |_radius,|L.Circle, L.CircleMarkerの仕様による|L.Circle, L.CircleMarkerの仕様による|
 
 ## サンプルサイト
-スタイルつき GeoJSONをLaefletで表示するサンプルです。
+スタイルつき GeoJSONをLfletで表示するサンプルです。
 - 外部ファイルを表示
 https://gsi-cyberjapan.github.io/geojson-with-style-spec/sample1.html
 - htmlに埋め込み
