@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <title>スタイルつき GeoJSON 表示サンプル</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.3/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@0.7.3/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
 
 <style>
 body {padding: 0; margin: 0}
@@ -43,62 +43,67 @@ function popup_properties(prop) {
 
 // スタイルつき GeoJSON読み込み
 // 「./sample1.geojson」の部分を適宜変更してください。
+
 var xhr = new XMLHttpRequest();
-xhr.open('GET', './sample1.geojson', false);
-xhr.send(null);
-var sampledata = JSON.parse(xhr.responseText);
+xhr.onreadystatechange = function(){
+  if(4 !== xhr.readyState || (200 !== xhr.status && 304 !== xhr.status)) return;
+  var sampledata = JSON.parse(xhr.responseText);
 
-var sampleLayer = L.geoJson(sampledata, {
-  pointToLayer: function (feature, latlng) {
-    var s = geojson_style(feature.properties);
-    if(feature.properties['_markerType']=='Icon'){
-      var myIcon = L.icon(s);
-      return L.marker(latlng, {icon: myIcon});
-    }
-    if(feature.properties['_markerType']=='DivIcon'){
-      var myIcon = L.divIcon(s);
-      return L.marker(latlng, {icon: myIcon});
-    }
-    if(feature.properties['_markerType']=='Circle'){
-      return L.circle(latlng,feature.properties['_radius'],s);
-    }
-    if(feature.properties['_markerType']=='CircleMarker'){
-      return L.circleMarker(latlng,s);
-    }
-  },
-  style: function (feature) {
-    if(!feature.properties['_markerType']){
+  var sampleLayer = L.geoJson(sampledata, {
+    pointToLayer: function (feature, latlng) {
       var s = geojson_style(feature.properties);
-      return s;
+      if(feature.properties['_markerType']=='Icon'){
+        var myIcon = L.icon(s);
+        return L.marker(latlng, {icon: myIcon});
+      }
+      if(feature.properties['_markerType']=='DivIcon'){
+        var myIcon = L.divIcon(s);
+        return L.marker(latlng, {icon: myIcon});
+      }
+      if(feature.properties['_markerType']=='Circle'){
+        return L.circle(latlng,feature.properties['_radius'],s);
+      }
+      if(feature.properties['_markerType']=='CircleMarker'){
+        return L.circleMarker(latlng,s);
+      }
+    },
+    style: function (feature) {
+      if(!feature.properties['_markerType']){
+        var s = geojson_style(feature.properties);
+        return s;
+      }
+    },
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup(popup_properties(feature.properties));
     }
-  },
-  onEachFeature: function (feature, layer) {
-    layer.bindPopup(popup_properties(feature.properties));
-  }
-});
+  });
 
 
-// 背景地図設定
-var std = L.tileLayer(
-  'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
-  {
-    attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル（標準地図）</a>", 
-    maxNativeZoom: 18,
-    maxZoom: 18,
-    opacity:1
-  }
-);
+  // 背景地図設定
+  var std = L.tileLayer(
+    'https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png',
+    {
+      attribution: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>地理院タイル（標準地図）</a>", 
+      maxNativeZoom: 18,
+      maxZoom: 18,
+      opacity:1
+    }
+  );
 
-// 中心位置設定
-var map = L.map('mapdiv', {
-  center: [36.102099,140.082239], zoom: 16, layers: [std,sampleLayer]
-});
+  // 中心位置設定
+  var map = L.map('mapdiv', {
+    center: [36.102099,140.082239], zoom: 16, layers: [std,sampleLayer]
+  });
 
-L.control.scale({imperial: false}).addTo(map);
-var baseLayers = {"地理院タイル（標準地図）": std};
-var overlays = {'サンプル': sampleLayer };
-L.control.layers(baseLayers, overlays,{position:'topright',collapsed:false}).addTo(map);
+  L.control.scale({imperial: false}).addTo(map);
+  var baseLayers = {"地理院タイル（標準地図）": std};
+  var overlays = {'サンプル': sampleLayer };
+  L.control.layers(baseLayers, overlays,{position:'topright',collapsed:false}).addTo(map);
+};
+xhr.open('GET', './sample1.geojson', true);
+xhr.send(null);
 </script>
+</div>
 </body>
 
 </html>
